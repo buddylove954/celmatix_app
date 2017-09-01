@@ -1,0 +1,19 @@
+<div>
+  <header>
+    <div>Admin Panel</div>
+    <li>
+      <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
+    </li>
+  </header>
+  <body>
+    <div>
+      <%= form_tag({action: :upload, controller: :admins}, multipart: true) do %>
+          <%= file_field_tag 'json' %>
+      <% end %>
+
+      <%= form_for @products do |f| %>
+          <%= f.file_field :json_file %>
+      <% end %>
+    </div>
+  </body>
+</div>
