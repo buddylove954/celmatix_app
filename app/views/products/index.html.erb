@@ -1,1 +1,39 @@
-<h1> Hello there friend</h1>
+<div>
+
+  <header>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-4">
+          <h1>All Products</h1>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-2"></div>
+        <div class="col-1">
+          <%= link_to('logout', 'index.html.erb') %>
+        </div>
+        <div class="col-1">
+          <%= link_to('cart', 'index.html.erb') %>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+  <div class="col-12">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-4 products">
+          <li>Name: <%= product.name %></li>
+          <li>Brand: <%= product.brand %></li>
+          <li>Sku: <%= product.sku %></li>
+          <li>Price: $<%= product.price %></li>
+          <li>Description: <%= product.desc %></li>
+          <div class="col-12 text-center">
+            <button type="button" class="btn btn-success center">add to cart</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </body>
+</div>

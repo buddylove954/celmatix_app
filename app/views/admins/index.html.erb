@@ -6,13 +6,12 @@
     </li>
   </header>
   <body>
+  <h2>Upload Products</h2>
     <div>
-      <%= form_tag({action: :upload, controller: :admins}, multipart: true) do %>
-          <%= file_field_tag 'json' %>
-      <% end %>
-
-      <%= form_for @products do |f| %>
-          <%= f.file_field :json_file %>
+      <%= form_tag({:action => 'upload', :controller => 'admins'}, :multipart => true) do %>
+          <p><label for="upload_file">Select File</label>
+            <%= file_field 'json_file', 'file' %></p>
+          <%= submit_tag "Upload" %>
       <% end %>
     </div>
   </body>
