@@ -1,0 +1,29 @@
+<div>
+  <header>
+    <div>Admin Panel</div>
+    <li>
+      <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
+    </li>
+  </header>
+  <body>
+  <h2>Upload Products</h2>
+    <div>
+      <%= form_tag({:action => 'upload', :controller => 'admins'}, :multipart => true) do %>
+          <p><label for="upload_file">Select File</label>
+            <%= file_field 'json_file', 'file' %></p>
+          <%= submit_tag "Upload" %>
+      <% end %>
+    </div>
+
+  <div>
+    <h2>List of Customers</h2>
+    <% if @customers%>
+      <% @customers.each do |customer| %>
+        <li><%= customer.name %></li>
+      <% end %>
+    <% else %>
+    <h2> 0 customers</h2>
+    <% end %>
+  </div>
+  </body>
+</div>
