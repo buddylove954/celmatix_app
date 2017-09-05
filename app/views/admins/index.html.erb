@@ -14,5 +14,16 @@
           <%= submit_tag "Upload" %>
       <% end %>
     </div>
+
+  <div>
+    <h2>List of Customers</h2>
+    <% if @customers%>
+      <% @customers.each do |customer| %>
+        <li><%= customer.name %></li>
+      <% end %>
+    <% else %>
+    <h2> 0 customers</h2>
+    <% end %>
+  </div>
   </body>
 </div>

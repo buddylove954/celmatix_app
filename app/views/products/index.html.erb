@@ -9,7 +9,7 @@
         <div class="col-4"></div>
         <div class="col-2"></div>
         <div class="col-1">
-          <%= link_to('logout', 'index.html.erb') %>
+          <%= customer_signed_in? ? link_to('logout', destroy_customer_session_path, method: :delete) : link_to('login', new_customer_session_path) %>
         </div>
         <div class="col-1">
           <%= link_to('cart', 'index.html.erb') %>
@@ -27,7 +27,6 @@
           <li>Brand: <%= product.brand %></li>
           <li>Sku: <%= product.sku %></li>
           <li>Price: $<%= product.price %></li>
-          <li>Description: <%= product.desc %></li>
           <div class="col-12 text-center">
             <button type="button" class="btn btn-success center">add to cart</button>
           </div>

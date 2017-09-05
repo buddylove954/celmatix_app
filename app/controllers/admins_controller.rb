@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
   def index
+    @customers = Customers.all
     render 'index.html.erb'
   end
 
