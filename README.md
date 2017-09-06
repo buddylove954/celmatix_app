@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version 2.3.3 / Rails 5
 
-Things you may want to cover:
+## Postgres Database
 
-* Ruby version
+## Admin creds
+ * email: admin@admin.com
+ * pw: admin123
 
-* System dependencies
+## Admin Routes
+* /admins/sign_in
+* /admins/index
 
-* Configuration
+## Getting Started (commands to run)
 
-* Database creation
+1. git clone https://github.com/buddylove954/celmatix_app.git
 
-* Database initialization
+2. bundle install
 
-* How to run the test suite
+3. rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. rails server
