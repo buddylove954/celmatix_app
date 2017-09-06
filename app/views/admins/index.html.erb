@@ -1,9 +1,12 @@
-<div>
+<div class="col-12">
   <header>
     <div>Admin Panel</div>
     <li>
       <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
     </li>
+    <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
   </header>
   <body>
   <h2>Upload Products</h2>
@@ -15,11 +18,43 @@
       <% end %>
     </div>
 
-  <div>
+  <div class="col-12">
+    <h2>Add a Product</h2>
+
+    <%= form_for @product, url: {action: "create", :controller => 'products'}, html: {class: "nifty_form"} do |f| %>
+        <ul>
+          <h5>Name</h5>
+          <%= f.text_field :name %>
+        </ul>
+        <ul>
+          <h5>Brand</h5>
+          <%= f.text_field :brand %>
+        </ul>
+        <ul>
+          <h5>Model</h5>
+          <%= f.text_field :model %>
+        </ul>
+        <ul>
+          <h5>Sku</h5>
+          <%= f.text_field :sku %>
+        </ul>
+        <ul>
+          <h5>Price</h5>
+          <%= f.text_field :price %>
+        </ul>
+        <ul>
+          <h5>Description</h5>
+          <%= f.text_field :desc %>
+        </ul>
+        <ul><%= f.submit "Create" %></ul>
+    <% end %>
+  </div>
+
+  <div class="col 12">
     <h2>List of Customers</h2>
     <% if @customers%>
       <% @customers.each do |customer| %>
-        <li><%= customer.name %></li>
+        <li><%= customer.email %></li>
       <% end %>
     <% else %>
     <h2> 0 customers</h2>

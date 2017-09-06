@@ -4,8 +4,20 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+product1:
+  name: 'super soaker'
+  brand: 'hasbro'
+  price: 20.00
+  desc: 'a water gun'
+  model: 'bs127583934'
+  sku: '004826294721'
 # column: value
 #
-two: {}
+product2:
+  name: 'game boy'
+  brand: 'nintendo'
+  price: 100.00
+  desc: 'a portable gaming system'
+  model: 'GB12356283934'
+  sku: '73469138353212'
 # column: value

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post '/admins/upload' => 'admins#upload'
 
+  post '/products/create' => 'products#create'
+
   get '/products' => 'products#index'
 
   root to: 'products#index'
