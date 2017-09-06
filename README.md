@@ -4,6 +4,8 @@
 
 ## Postgres Database
 
+## Hosted on Heroku: https://damp-cliffs-12830.herokuapp.com/
+
 ## Admin creds
  * email: admin@admin.com
  * pw: admin123
