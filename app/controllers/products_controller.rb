@@ -1,14 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
-    if current_admin
-      @product = Product.new
-      @customers = Customer.all
-      render '/admins/index.html.erb'
-    else
       @products = Product.all
+      @order_item = current_order.order_items.new
       render 'index.html.erb'
-    end
   end
 
   def create

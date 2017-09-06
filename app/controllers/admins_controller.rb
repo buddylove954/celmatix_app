@@ -1,10 +1,18 @@
 class AdminsController < ApplicationController
 
   def index
-    render 'index.html.erb'
+    if current_admin
+      @product = Product.new
+      @customers = Customer.all
+      render 'index.html.erb'
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
+
   end
 
   def upload
+    @product = Product.new
     json_file = File.read(params[:json_file][:file].tempfile)
     json = JSON.parse(json_file)
     json['products'].each do |json_product|
